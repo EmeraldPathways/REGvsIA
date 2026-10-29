@@ -2,6 +2,42 @@
 
 A browser-only calculator that compares an Irish bank savings illustration with the proposed Irish Investment Account. It is based on the OmegaCalculator project layout and is tailored to this comparison.
 
+## Embed on the Omega website
+
+Use this iframe wherever the calculator should appear. The `?embed=1` parameter removes the calculator's standalone site header and sends height updates to the containing page, so the frame can grow as the visitor opens assumptions or views results.
+
+```html
+<iframe
+  id="omega-savings-comparison"
+  src="https://reg-vs-ia.vercel.app/?embed=1"
+  title="Regular savings versus Investment Account calculator"
+  loading="lazy"
+  style="display:block;width:100%;height:1000px;border:0;"
+></iframe>
+
+<script>
+  (() => {
+    const frame = document.getElementById("omega-savings-comparison");
+    const calculatorOrigin = "https://reg-vs-ia.vercel.app";
+
+    window.addEventListener("message", (event) => {
+      if (
+        event.origin !== calculatorOrigin ||
+        event.source !== frame.contentWindow ||
+        event.data?.type !== "REGVSIA_EMBED_RESIZE" ||
+        !Number.isFinite(event.data.height)
+      ) {
+        return;
+      }
+
+      frame.style.height = `${Math.max(600, event.data.height)}px`;
+    });
+  })();
+</script>
+```
+
+If the website editor does not allow inline scripts, add the iframe as an HTML embed and put the listener in the site's custom code area. The calculator is responsive and works on mobile. It keeps inputs in the visitor's browser and does not save or transmit them. No PDF or print export is provided.
+
 ## Important product distinction
 
 The Irish Investment Account is a Government initiative, but it is **not** a Government savings scheme and does not guarantee capital or returns. Providers are expected to offer it from 1 July 2027. The account is for eligible investments, not a cash savings balance.
@@ -22,8 +58,6 @@ npm install
 npm run dev
 npm run build
 ```
-
-The app keeps all inputs in the browser and does not save or transmit them.
 
 ## Sources (checked 29 October 2026)
 
