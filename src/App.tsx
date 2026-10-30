@@ -243,18 +243,12 @@ export default function App() {
 
   return (
     <main className={embedMode ? "app app-embedded" : "app"}>
-      {!embedMode ? (
-        <header className="site-header">
-          <a className="brand" href="https://www.omegafinancial.ie/" aria-label="Omega Financial Management home">
-            <span className="brand-mark">Ω</span>
-            <span><strong>OMEGA</strong><small>FINANCIAL MANAGEMENT</small></span>
-          </a>
-          <span className="header-label">Savings comparison</span>
-        </header>
-      ) : null}
-
-      <section className="intro">
-        <div>
+      <header className="hero-banner">
+        <a className="brand" href="https://www.omegafinancial.ie/" aria-label="Omega Financial Management home">
+          <span className="brand-mark">Ω</span>
+          <span><strong>OMEGA</strong><small>FINANCIAL MANAGEMENT</small></span>
+        </a>
+        <div className="hero-copy">
           <p className="eyebrow">Irish savings comparison</p>
           <h1>Regular savings or the new Investment Account?</h1>
           <p className="intro-copy">Compare your own savings assumptions, taxes and charges side by side. Change the figures to match the account and provider you are considering.</p>
@@ -263,7 +257,7 @@ export default function App() {
           <span className="badge-dot" />
           <div><small>Expected from</small><strong>1 July 2027</strong></div>
         </aside>
-      </section>
+      </header>
 
       <section className="disclosure">
         <strong>First, a useful distinction</strong>
