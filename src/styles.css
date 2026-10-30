@@ -259,3 +259,14 @@ tbody td { color: var(--ink); }
 @media (max-width: 560px) {
   .embed-mode .hero-banner, .embed-mode .calculator-layout { width: calc(100% - 18px); }
 }
+
+
+.hero-banner .brand-logo {
+  display: block;
+  width: min(100%, 185px);
+  height: auto;
+  object-fit: contain;
+}
+@media (max-width: 560px) {
+  .hero-banner .brand-logo { width: min(100%, 150px); }
+}
