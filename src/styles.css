@@ -158,3 +158,104 @@ body.embed-mode { background: transparent; }
   footer { width: calc(100% - 22px); padding: 13px 10px; }
   .embed-mode .intro, .embed-mode .disclosure, .embed-mode .calculator-layout, .embed-mode .notes, .embed-mode footer { width: calc(100% - 18px); }
 }
+
+
+/* Boxed Omega comparison layout */
+.hero-banner {
+  width: min(1320px, calc(100% - 48px));
+  min-height: 190px;
+  margin: 24px auto 18px;
+  padding: 28px 32px;
+  display: grid;
+  grid-template-columns: 190px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 26px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 20px;
+  background: linear-gradient(112deg, #54171d 0%, #712d32 100%);
+  box-shadow: 0 16px 42px rgba(67,17,22,.12);
+  color: #fff;
+}
+.hero-banner .brand { width: fit-content; gap: 9px; }
+.hero-banner .brand-mark { width: 48px; height: 48px; border-color: rgba(255,255,255,.45); color: #eee7d2; font-size: 31px; }
+.hero-banner .brand strong { font-size: 16px; }
+.hero-banner .brand small { font-size: 8px; }
+.hero-copy { min-width: 0; }
+.hero-copy .eyebrow { color: #d8c993; }
+.hero-copy h1 { max-width: 850px; margin: 0; color: #fff; font: 500 clamp(30px,3.2vw,43px)/1.08 Georgia,serif; letter-spacing: -.02em; }
+.hero-copy .intro-copy { max-width: 720px; margin: 9px 0 0; color: #f0e9e1; font-size: 13px; line-height: 1.5; }
+.hero-banner .launch-badge { align-self: end; margin-bottom: 2px; border-color: rgba(255,255,255,.22); background: rgba(255,255,255,.09); }
+.hero-banner .launch-badge small { color: #e8ddc9; }
+.hero-banner .launch-badge strong { color: #fff; }
+.hero-banner .badge-dot { background: #b7c69d; }
+.calculator-layout {
+  width: min(1320px, calc(100% - 48px));
+  grid-template-columns: minmax(340px, .62fr) minmax(0, 1.38fr);
+  gap: 16px;
+  overflow: visible;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+.input-card, .results-panel {
+  min-width: 0;
+  border: 1px solid #e5e1d8;
+  border-radius: 17px;
+  background: #fff;
+  box-shadow: 0 9px 30px rgba(43,34,25,.055);
+}
+.results-panel { color: var(--ink); }
+.results-topline { color: var(--gold); }
+.difference-card { border-color: #ebe7dc; background: linear-gradient(115deg,#faf9f5,#f0eee5); }
+.difference-card .eyebrow { color: var(--gold); }
+.difference-card strong { color: var(--wine); }
+.difference-card span:not(.difference-arrow) { color: #77736c; }
+.difference-arrow { color: var(--gold); }
+.scenario-card, .scenario-investment { border-color: #e8e4da; background: #fff; }
+.scenario-title .eyebrow { color: var(--gold); }
+.scenario-title h3 { color: var(--wine-dark); }
+.scenario-mark { border-color: #e8e4da; color: var(--wine); }
+.scenario-total { color: var(--wine); }
+.scenario-total-label, .scenario-breakdown dt { color: #77736c; }
+.scenario-breakdown { border-top-color: #eeeae2; }
+.scenario-breakdown dd { color: var(--ink); }
+.chart-frame { border-color: #e8e4da; background: #fff; }
+.chart-heading h3 { color: var(--wine-dark); }
+.chart-heading > span, .chart-legend { color: #77736c; }
+.gridline { stroke: #e8e4da; }
+.line-bank { stroke: #988b54; }
+.line-investment { stroke: #661e24; }
+.dot-bank { background: #988b54; }
+.dot-investment { background: #661e24; }
+.table-scroll { border-color: #e8e4da; }
+thead { background: #f5f3ed; color: var(--wine-dark); }
+th, td { border-bottom-color: #ece8df; }
+tbody th { color: #60594f; }
+tbody td { color: var(--ink); }
+@media (max-width: 900px) {
+  .hero-banner { grid-template-columns: 1fr auto; gap: 12px 20px; padding: 23px; }
+  .hero-banner .brand { grid-column: 1 / 2; grid-row: 1; }
+  .hero-copy { grid-column: 1 / -1; grid-row: 2; }
+  .hero-banner .launch-badge { grid-column: 2; grid-row: 1; }
+  .calculator-layout { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  .hero-banner { width: calc(100% - 22px); min-height: 0; margin: 11px auto 12px; padding: 18px 16px; grid-template-columns: 1fr auto; gap: 14px 8px; border-radius: 15px; }
+  .hero-banner .brand-mark { width: 38px; height: 38px; font-size: 25px; }
+  .hero-banner .brand strong { font-size: 13px; }
+  .hero-banner .brand small { font-size: 7px; }
+  .hero-banner .launch-badge { padding: 8px 9px; gap: 7px; }
+  .hero-banner .launch-badge small { font-size: 8px; }
+  .hero-banner .launch-badge strong { font-size: 11px; }
+  .hero-copy h1 { max-width: 100%; font-size: 29px; }
+  .hero-copy .intro-copy { font-size: 12px; }
+  .calculator-layout { width: calc(100% - 22px); gap: 12px; }
+  .input-card, .results-panel { padding: 17px 13px; }
+}
+.embed-mode .hero-banner { width: min(1320px,calc(100% - 24px)); }
+.embed-mode .calculator-layout { width: calc(100% - 24px); }
+@media (max-width: 560px) {
+  .embed-mode .hero-banner, .embed-mode .calculator-layout { width: calc(100% - 18px); }
+}
