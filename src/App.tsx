@@ -245,8 +245,7 @@ export default function App() {
     <main className={embedMode ? "app app-embedded" : "app"}>
       <header className="hero-banner">
         <a className="brand" href="https://www.omegafinancial.ie/" aria-label="Omega Financial Management home">
-          <span className="brand-mark">Ω</span>
-          <span><strong>OMEGA</strong><small>FINANCIAL MANAGEMENT</small></span>
+          <img className="brand-logo" src="/omega-financial-logo-white.png" alt="Omega Financial Management" />
         </a>
         <div className="hero-copy">
           <p className="eyebrow">Irish savings comparison</p>
